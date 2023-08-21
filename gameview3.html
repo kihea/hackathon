@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel = "stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body class = "bg-EV-gray" >
+    <script type="module" src="game3.js"></script>
+    <div class="font-p2s container bg-EV-black flex flex-column absolute h-full top-0 w-60">
+        <a href = "index.html" class="absolute mx-5 my-5"><img src = "assets/icon.svg" alt="logo" class="-translate-y-1 h-16 w-16 "></a>
+        <div class="container flex flex-col items-center justify-center">
+            <h1 class="text-2xl pb-8 px-8 text-EV-gray">Your Chances</h1>
+            <img src="assets/meterEV.svg" alt="NA-meter%" style="margin-bottom:-9rem;">
+            <img class="mb-10" src="assets/meterarrow.svg" alt="meterarrow">
+            <h1 id="Chancing" class="text-2xl pb-8 px-8 text-EV-gray">NA</h1>
+        </div>
+    </div>
+
+    
+    <div class="font-p2s container absolute left-400 top-45">
+        <div class="bg-EV-purple h-64 w-220 absolute" style="left: -20px; top: 20px; z-index: -1;"></div>
+        <div class="font-ps2 container bg-EV-black h-64 w-220 relative" style="z-index: 1;">
+            <!--Replace the underscores with choices-->
+            <h2 id="Prompt" class="text-white p-10 text-xl ">Awesome! Click continue to start!</h2>
+        </div>
+
+        <div style="margin-top:50px; margin-bottom:40px; margin-left:30px;">
+        <button id="Choice1" class="rounded-2xl bg-EV-dark-gray shadow-black w-96 h-64 text-center text-2xl text-black drop-shadow-lg hover:-translate-y-2 ease duration-300" style="margin-right:15px;">choice 1</button>
+        <span><button id="Choice2" class="rounded-2xl bg-EV-dark-gray shadow-black w-96 h-64 text-center text-2xl text-black drop-shadow-lg hover:-translate-y-2 ease duration-300">choice 2</button></span>
+        </div>
+        <button id="Continue">
+            <!--Copy and paste this file onto another gameview for as many examples-->
+            
+            <img src="assets/nextbutton.svg" style="margin-left: 360px; width:120px;" class="hover:translate-x-2 ease duration-300">
+            
+        </button>
+    </div>
+</body>
