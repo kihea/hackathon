@@ -55,10 +55,10 @@ const convertSearchParams = (searchParams) => {
 }
 class Match {
     constructor(college, percentMatch, breakdown) {
-        this._college = Math.max(0, Math.min(100, college));
+        this._college = Math.max(0, Math.min(1, college));
         this._percentMatch = Math.max(0, Math.min(100, percentMatch));
         this.college = (this._college * 100).toFixed(2) + "%";
-        this.percentMatch = Math.max(0, Math.min(100, this._percentMatch)).toFixed(2) + "%";
+        this.percentMatch = this._percentMatch.toFixed(2) + "%";
         this.breakdown = breakdown;
     }
 }
