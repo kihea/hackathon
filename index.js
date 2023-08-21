@@ -55,10 +55,10 @@ const convertSearchParams = (searchParams) => {
 }
 class Match {
     constructor(college, percentMatch, breakdown) {
-        this._college = college;
-        this._percentMatch = percentMatch;
-        this.college = (college * 100).toFixed(2) + "%";
-        this.percentMatch = Math.max(0, Math.min(100, percentMatch)).toFixed(2) + "%";
+        this._college = Math.max(0, Math.min(100, college));
+        this._percentMatch = Math.max(0, Math.min(100, percentMatch));
+        this.college = (this._college * 100).toFixed(2) + "%";
+        this.percentMatch = Math.max(0, Math.min(100, this._percentMatch)).toFixed(2) + "%";
         this.breakdown = breakdown;
     }
 }
@@ -103,7 +103,7 @@ class StudentProfile {
             // Went test optional
             adjustedTestScoreToCollege = 0;
         }
-        base += map_range(this.gpa, 1, 4, -.1, .3);
+        base += map_range(this.gpa, 1, 4, -.1, .2);
         percentMatchByGPA = Math.max(Math.min(map_range(this.gpa, map_range(1 - collegeProfile.acceptanceRate, 0, 1, 0, 1.0, .25, 1), map_range(1 - collegeProfile.acceptanceRate, 0, 1, 3, 4), .25, 1), 1), 0);
         //percentMatchByIncome = Math.max(Math.min(map_range(this.hhIncome, collegeProfile.MedianHHIncome - 10000, collegeProfile.MedianHHIncome + 10000, 0, 1), 1), 0);
         percentMatchByFirstGen = collegeProfile.PercentFirstGeneration > .4 ? 1 : 0.97;
